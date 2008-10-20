@@ -1,0 +1,8 @@
+o migration joins
+o migration splits
+o implement maps,sets,lists
+o testcases
+o language support
+  - ruby
+  - objective-c
+  - python

@@ -1,0 +1,25 @@
+object Migration {
+
+  // simple
+  string simple;
+
+  // straight migration
+  string c migrate
+    from string [d]
+    from int32 [e]
+    from string [f];
+
+/*  
+  // splitting
+  string a migrate
+    from string [ab];
+  string b migrate
+    from string [ab];
+
+  // combining
+  int32 timestamp migrate
+    from string [dateTime]
+    from string [date] and string [time];
+*/
+    
+}

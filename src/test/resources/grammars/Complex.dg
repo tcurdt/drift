@@ -1,0 +1,21 @@
+object CommonEvent {
+ string test;
+}
+
+object Person {
+ string name [#1];
+}
+
+object VideoEvent extends CommonEvent {
+ optional string enum [#3];
+ required string videoId migrate
+   from [videoUri];
+ string newname [oldname];
+ int32 timestamp [#5] migrate
+   from string [dateTime]
+   from string [date];
+ string date [#4] migrate
+   from string [date];
+
+ Person user;
+}

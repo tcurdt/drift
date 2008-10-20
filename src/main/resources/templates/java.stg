@@ -1,0 +1,205 @@
+group java;
+
+object(package,name,parents,attributes,slots,migration) ::= <<
+/*
+ * Copyright 2008 The Apache Software Foundation.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+<if(package)>package <package>;<endif>
+
+import org.vafer.drift.*;
+import org.vafer.drift.protocol.*;
+import org.vafer.drift.protocol.fields.*;
+import org.vafer.drift.utils.ProtocolUtils;
+
+
+<if(parents)>// extends <parents; separator=","><endif>
+public final class <name> implements DriftObject, java.io.Serializable {
+ 
+ 	private static final long serialVersionUID = 1L;
+ 
+ 	private static final <migration> migration = new <migration>();
+ 
+    <attributes:{ a |
+    private <(declMap.(a.type))(a.type)> <a.name>;
+    }; separator="\n">
+ 
+    <attributes:{ a |
+    public <(declMap.(a.type))(a.type)> get<a.name; format="capitalizeFirst">() {
+         return <a.name>;
+    }
+     
+    public void set<a.name; format="capitalizeFirst">( final <(declMap.(a.type))(a.type)> <a.name> ) {
+         this.<a.name> = <a.name>;
+    }
+    
+    }>
+ 
+	public void read( final Protocol iprot) throws DriftException {
+		TAttribute field;
+
+		while (true) {
+			field = iprot.readAttributeBegin();
+			if (field.type == TType.STOP) { 
+				break;
+			}
+			switch (field.id) {
+
+		    <slots:{ s |        	
+				case <s.slotNumber>: { // <s>
+				
+					<(readMap.(s.type))(s)>
+					
+					<open(s)>tmp<close(s)> ;
+
+					} break;
+					
+		    }; separator="\n">
+
+			default:
+				ProtocolUtils.skip(iprot, field.type);			
+			}
+			iprot.readAttributeEnd();
+		}
+	}
+
+	public void write( final Protocol oprot) throws DriftException {
+
+		final TObject object = new TObject("<name>");
+		oprot.writeObjectBegin(object);
+
+        <attributes:{ a | <(writeMap.(a.type))(a)> }>
+		
+		oprot.writeAttributeStop();				
+		oprot.writeObjectEnd();	
+	}
+}
+>>
+
+open(x) ::= <<
+  <if(x.childs)>
+    <x.childs:{ y | 
+      <open(y)>
+      <migration>.convert_<x.slotName><x.slotNumber>_to_<y.slotName><y.slotNumber>(
+    }>
+  <else> 
+    this.<x.name> = 
+  <endif>
+>>
+
+close(x) ::= <<
+  <if(x.childs)>
+    <x.childs:{ y | <close(y)> ) }>
+  <endif>
+>>
+
+writeSTRING(a) ::= <<
+		{  
+			final TAttribute field = new TAttribute();
+			field.name = "<a.name>";
+			field.type = TType.STRING;
+			field.id = <a.slotNumber>;
+			
+			oprot.writeAttributeBegin(field);		
+			oprot.writeString(this.<a.name>);				
+			oprot.writeAttributeEnd();
+		}
+>>
+
+writeI32(a) ::= <<
+		{  
+			final TAttribute field = new TAttribute();
+			field.name = "<a.name>";
+			field.type = TType.I32;
+			field.id = <a.slotNumber>;
+			
+			oprot.writeAttributeBegin(field);		
+			oprot.writeI32(this.<a.name>);				
+			oprot.writeAttributeEnd();
+		}
+>>
+
+writeOBJECT(a) ::= <<
+		if (this.<a.name> != null) {  
+			final TAttribute field = new TAttribute();
+			field.name = "<a.name>";
+			field.type = TType.OBJECT;
+			field.id = <a.slotNumber>;
+			
+			oprot.writeAttributeBegin(field);		
+			this.<a.name>.write();				
+			oprot.writeAttributeEnd();
+		}
+>>
+
+readOBJECT(a) ::= <<
+		final TObject object = iprot.readObjectBegin();
+		final DriftObject dobject = factory.createDriftObject(object);
+		dobject.read(iprot);
+		
+		final (<a.type>) tmp = (<a.type>) dobject;
+		
+		iprot.readObjectEnd();
+>>
+
+readSTRING(a) ::= <<
+		final String tmp = iprot.readString();
+>>
+
+readI32(a) ::= <<
+		final int tmp = iprot.readI32();
+>>
+
+declOBJECT(t) ::= << <t> >>
+declSTRING(t) ::= << String >>
+declI32(t) ::= << int >>
+
+writeMap ::= [
+        "bool":"writeBOOL",
+        "byte":"writeBYTE",
+        "double":"writeDOUBLE",
+        "int16":"writeI16",
+        "int32":"writeI32",
+        "string":"writeSTRING",
+        "map":"writeMAP",
+        "set":"writeSET",
+        "list":"writeLIST",
+        default:"writeOBJECT"
+]
+
+readMap ::= [
+        "bool":"readBOOL",
+        "byte":"readBYTE",
+        "double":"readDOUBLE",
+        "int16":"readI16",
+        "int32":"readI32",
+        "string":"readSTRING",
+        "map":"readMAP",
+        "set":"readSET",
+        "list":"readLIST",
+        default:"readOBJECT"
+]
+
+declMap ::= [
+        "bool":"declBOOL",
+        "byte":"declBYTE",
+        "double":"declDOUBLE",
+        "int16":"declI16",
+        "int32":"declI32",
+        "string":"declSTRING",
+        "map":"declMAP",
+        "set":"declSET",
+        "list":"declLIST",
+        default:"declOBJECT"
+]

@@ -1,0 +1,5 @@
+/* The most simple drift grammar */
+
+object Simple {
+  string simple;
+}

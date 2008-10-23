@@ -29,7 +29,7 @@ import org.vafer.drift.parser.DriftParser;
 
 public final class Schema {
 	
-	private final Map<String, ImmutableObject> flatStructs = new HashMap<String, ImmutableObject>();
+	private final Map<String, ImmutableObject> flatObjects = new HashMap<String, ImmutableObject>();
 
 	public static Schema build( final InputStream inputStream ) throws IOException {
 
@@ -38,17 +38,17 @@ public final class Schema {
         final DriftParser parser = new DriftParser(tokens);
 
         final Schema schema = new Schema();
-        final Map<String, ImmutableObject> flatStructs = schema.flatStructs;
+        final Map<String, ImmutableObject> flatObjects = schema.flatObjects;
 
         try {
         	
         	parser.file();
 
-        	final Map<String, MutableObject> structs = parser.objects;
+        	final Map<String, MutableObject> objects = parser.objects;
 
-        	for (MutableObject struct : structs.values()) {
-        		final FlatStruct flatStruct = struct.flatten(structs);
-        		flatStructs.put(flatStruct.getName(), flatStruct);
+        	for (MutableObject struct : objects.values()) {
+        		final FlatStruct flatObject = struct.flatten(objects);
+        		flatObjects.put(flatObject.getName(), flatObject);
 			}
         	
         } catch (RecognitionException e) {
@@ -64,13 +64,13 @@ public final class Schema {
 	}
 	
 	public ImmutableObject[] getObjects() {
-		final ImmutableObject[] objects = new ImmutableObject[flatStructs.size()];
-		flatStructs.values().toArray(objects);
+		final ImmutableObject[] objects = new ImmutableObject[flatObjects.size()];
+		flatObjects.values().toArray(objects);
 		return objects;
 	}
 	
 	public ImmutableObject getObject( final String name ) {
-		return flatStructs.get(name);
+		return flatObjects.get(name);
 	}
 
 }

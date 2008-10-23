@@ -1,0 +1,7 @@
+<project name="test" basedir="." default="generate">
+
+	<target name="generate" description="Generate source files">
+	    <echo message="Generating"/>
+	</target>
+
+</project>

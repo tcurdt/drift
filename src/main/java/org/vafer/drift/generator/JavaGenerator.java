@@ -15,8 +15,6 @@
  */
 package org.vafer.drift.generator;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -28,7 +26,7 @@ import org.vafer.drift.model.ImmutableObject;
 import org.vafer.drift.model.Schema;
 
 
-public final class Generator {
+public final class JavaGenerator {
 
 	/*
 	private void printSlot( ImmutableSlot slot, int level ) {
@@ -46,9 +44,9 @@ public final class Generator {
 		
 	}*/
 	
-	public void generate( Schema pSchema, String pLanguage, File pOutputDir ) throws IOException {
+	public void generate( Schema pSchema, CodeWriter pWriter ) throws IOException {
 
-		final InputStream is = getClass().getResourceAsStream("/templates/" + pLanguage + ".stg");
+		final InputStream is = getClass().getResourceAsStream("/templates/java.stg");
 		final InputStreamReader reader = new InputStreamReader(is);
 		final StringTemplateGroup group = new StringTemplateGroup(reader, AngleBracketTemplateLexer.class);
 
@@ -86,10 +84,8 @@ public final class Generator {
 	        t.setAttribute("attributes", object.getAttributes());
 	        t.setAttribute("slots", object.getSlots());
 	        
-	        final File output = new File(pOutputDir, object.getName() + "." + pLanguage);
-	        final FileWriter writer = new FileWriter(output);
-	        writer.append(t.toString());
-	        writer.close();
+	        pWriter.write(object.getName() + ".java", t.toString());
+	        
 		}
 				
 	}

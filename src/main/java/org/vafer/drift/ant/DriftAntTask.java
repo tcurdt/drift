@@ -21,15 +21,14 @@ import java.io.IOException;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
-import org.vafer.drift.generator.Generator;
+import org.vafer.drift.generator.FileCodeWriter;
+import org.vafer.drift.generator.JavaGenerator;
 import org.vafer.drift.model.Schema;
 
 public final class DriftAntTask extends Task {
 
 	private File schemaFile;
 	private File outputDir;
-	
-	
 	
 	public File getSchemaFile() {
 		return schemaFile;
@@ -63,9 +62,11 @@ public final class DriftAntTask extends Task {
 		try {
 			final Schema schema = Schema.build(new FileInputStream(schemaFile));
 				
-			final Generator generator = new Generator();
+			final JavaGenerator javaGenerator = new JavaGenerator();
 			
-			generator.generate(schema, "java", outputDir);
+			final FileCodeWriter writer = new FileCodeWriter(outputDir);
+			
+			javaGenerator.generate(schema, writer);
 		
 		} catch(IOException e) {
 			e.printStackTrace();			

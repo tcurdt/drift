@@ -1,3 +1,5 @@
+// $ANTLR 3.1 /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g 2008-10-24 17:27:38
+
 /*
  * Copyright 2008 The Apache Software Foundation.
  * 
@@ -13,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// $ANTLR 3.1 /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g 2008-10-10 16:49:47
-
     package org.vafer.drift.parser;
 
     import java.util.HashMap;
@@ -75,7 +75,7 @@ public class DriftParser extends Parser {
         
 
     public String[] getTokenNames() { return DriftParser.tokenNames; }
-    public String getGrammarFileName() { return "/Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g"; }
+    public String getGrammarFileName() { return "/Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g"; }
 
 
     	public final Map<String, MutableObject> objects = new HashMap<String, MutableObject>();
@@ -90,13 +90,13 @@ public class DriftParser extends Parser {
 
 
     // $ANTLR start "file"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:31:1: file : ( objectDeclaration )+ ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:60:1: file : ( objectDeclaration )+ ;
     public final void file() throws RecognitionException {
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:32:5: ( ( objectDeclaration )+ )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:32:7: ( objectDeclaration )+
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:61:5: ( ( objectDeclaration )+ )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:61:7: ( objectDeclaration )+
             {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:32:7: ( objectDeclaration )+
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:61:7: ( objectDeclaration )+
             int cnt1=0;
             loop1:
             do {
@@ -110,7 +110,7 @@ public class DriftParser extends Parser {
 
                 switch (alt1) {
             	case 1 :
-            	    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:32:7: objectDeclaration
+            	    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:61:7: objectDeclaration
             	    {
             	    pushFollow(FOLLOW_objectDeclaration_in_file36);
             	    objectDeclaration();
@@ -146,14 +146,14 @@ public class DriftParser extends Parser {
 
 
     // $ANTLR start "objectDeclaration"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:35:1: objectDeclaration : 'object' objectName ( 'extends' parentList )? objectBody ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:64:1: objectDeclaration : 'object' objectName ( 'extends' parentList )? objectBody ;
     public final void objectDeclaration() throws RecognitionException {
         DriftParser.objectName_return objectName1 = null;
 
 
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:36:5: ( 'object' objectName ( 'extends' parentList )? objectBody )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:36:7: 'object' objectName ( 'extends' parentList )? objectBody
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:65:5: ( 'object' objectName ( 'extends' parentList )? objectBody )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:65:7: 'object' objectName ( 'extends' parentList )? objectBody
             {
             match(input,11,FOLLOW_11_in_objectDeclaration54); 
             pushFollow(FOLLOW_objectName_in_objectDeclaration56);
@@ -166,7 +166,7 @@ public class DriftParser extends Parser {
                     object.setName((objectName1!=null?input.toString(objectName1.start,objectName1.stop):null));        
                     objects.put(object.getName(), object);
                   
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:42:7: ( 'extends' parentList )?
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:71:7: ( 'extends' parentList )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -175,7 +175,7 @@ public class DriftParser extends Parser {
             }
             switch (alt2) {
                 case 1 :
-                    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:42:9: 'extends' parentList
+                    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:71:9: 'extends' parentList
                     {
                     match(input,12,FOLLOW_12_in_objectDeclaration74); 
                     pushFollow(FOLLOW_parentList_in_objectDeclaration76);
@@ -212,14 +212,14 @@ public class DriftParser extends Parser {
     };
 
     // $ANTLR start "objectName"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:45:1: objectName : Identifier ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:74:1: objectName : Identifier ;
     public final DriftParser.objectName_return objectName() throws RecognitionException {
         DriftParser.objectName_return retval = new DriftParser.objectName_return();
         retval.start = input.LT(1);
 
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:46:5: ( Identifier )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:46:7: Identifier
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:75:5: ( Identifier )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:75:7: Identifier
             {
             match(input,Identifier,FOLLOW_Identifier_in_objectName97); 
 
@@ -240,14 +240,14 @@ public class DriftParser extends Parser {
 
 
     // $ANTLR start "objectBody"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:49:1: objectBody : '{' ( attributeDeclaration )+ '}' ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:78:1: objectBody : '{' ( attributeDeclaration )+ '}' ;
     public final void objectBody() throws RecognitionException {
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:50:5: ( '{' ( attributeDeclaration )+ '}' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:50:7: '{' ( attributeDeclaration )+ '}'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:79:5: ( '{' ( attributeDeclaration )+ '}' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:79:7: '{' ( attributeDeclaration )+ '}'
             {
             match(input,13,FOLLOW_13_in_objectBody114); 
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:50:11: ( attributeDeclaration )+
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:79:11: ( attributeDeclaration )+
             int cnt3=0;
             loop3:
             do {
@@ -261,7 +261,7 @@ public class DriftParser extends Parser {
 
                 switch (alt3) {
             	case 1 :
-            	    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:50:11: attributeDeclaration
+            	    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:79:11: attributeDeclaration
             	    {
             	    pushFollow(FOLLOW_attributeDeclaration_in_objectBody116);
             	    attributeDeclaration();
@@ -298,7 +298,7 @@ public class DriftParser extends Parser {
 
 
     // $ANTLR start "attributeDeclaration"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:53:1: attributeDeclaration : ( modifierSpecifier )? typeSpecifier attributeName ( slot )? ( migrationList )? ';' ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:82:1: attributeDeclaration : ( modifierSpecifier )? typeSpecifier attributeName ( slot )? ( migrationList )? ';' ;
     public final void attributeDeclaration() throws RecognitionException {
         DriftParser.slot_return slot2 = null;
 
@@ -310,10 +310,10 @@ public class DriftParser extends Parser {
 
 
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:54:5: ( ( modifierSpecifier )? typeSpecifier attributeName ( slot )? ( migrationList )? ';' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:54:7: ( modifierSpecifier )? typeSpecifier attributeName ( slot )? ( migrationList )? ';'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:83:5: ( ( modifierSpecifier )? typeSpecifier attributeName ( slot )? ( migrationList )? ';' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:83:7: ( modifierSpecifier )? typeSpecifier attributeName ( slot )? ( migrationList )? ';'
             {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:54:7: ( modifierSpecifier )?
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:83:7: ( modifierSpecifier )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -322,7 +322,7 @@ public class DriftParser extends Parser {
             }
             switch (alt4) {
                 case 1 :
-                    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:54:7: modifierSpecifier
+                    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:83:7: modifierSpecifier
                     {
                     pushFollow(FOLLOW_modifierSpecifier_in_attributeDeclaration136);
                     modifierSpecifier5=modifierSpecifier();
@@ -345,7 +345,7 @@ public class DriftParser extends Parser {
 
             state._fsp--;
 
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:54:54: ( slot )?
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:83:54: ( slot )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -354,7 +354,7 @@ public class DriftParser extends Parser {
             }
             switch (alt5) {
                 case 1 :
-                    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:54:54: slot
+                    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:83:54: slot
                     {
                     pushFollow(FOLLOW_slot_in_attributeDeclaration143);
                     slot2=slot();
@@ -374,11 +374,15 @@ public class DriftParser extends Parser {
                     }
 
                     attribute = object.addAttribute(slotNumber);
+
+                    if (slotName == null) {
+                        slotName = (attributeName3!=null?input.toString(attributeName3.start,attributeName3.stop):null);
+                    }
+
                     attribute.setSlotName(slotName);
                     
                     attribute.setName((attributeName3!=null?input.toString(attributeName3.start,attributeName3.stop):null));
-
-            	attribute.setType((typeSpecifier4!=null?input.toString(typeSpecifier4.start,typeSpecifier4.stop):null));
+            	    attribute.setType((typeSpecifier4!=null?input.toString(typeSpecifier4.start,typeSpecifier4.stop):null));
                   
                     if ("required".equals((modifierSpecifier5!=null?input.toString(modifierSpecifier5.start,modifierSpecifier5.stop):null))) {
                       attribute.setRequired(true);
@@ -386,7 +390,7 @@ public class DriftParser extends Parser {
 
                     slot = attribute;
                   
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:74:9: ( migrationList )?
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:107:9: ( migrationList )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -395,7 +399,7 @@ public class DriftParser extends Parser {
             }
             switch (alt6) {
                 case 1 :
-                    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:74:9: migrationList
+                    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:107:9: migrationList
                     {
                     pushFollow(FOLLOW_migrationList_in_attributeDeclaration162);
                     migrationList();
@@ -431,17 +435,17 @@ public class DriftParser extends Parser {
     };
 
     // $ANTLR start "slot"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:81:1: slot : '[' ( slotName | slotNumber ) ']' ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:114:1: slot : '[' ( slotName | slotNumber ) ']' ;
     public final DriftParser.slot_return slot() throws RecognitionException {
         DriftParser.slot_return retval = new DriftParser.slot_return();
         retval.start = input.LT(1);
 
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:82:5: ( '[' ( slotName | slotNumber ) ']' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:82:7: '[' ( slotName | slotNumber ) ']'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:115:5: ( '[' ( slotName | slotNumber ) ']' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:115:7: '[' ( slotName | slotNumber ) ']'
             {
             match(input,16,FOLLOW_16_in_slot190); 
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:82:11: ( slotName | slotNumber )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:115:11: ( slotName | slotNumber )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -459,7 +463,7 @@ public class DriftParser extends Parser {
             }
             switch (alt7) {
                 case 1 :
-                    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:82:13: slotName
+                    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:115:13: slotName
                     {
                     pushFollow(FOLLOW_slotName_in_slot194);
                     slotName();
@@ -470,7 +474,7 @@ public class DriftParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:82:24: slotNumber
+                    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:115:24: slotNumber
                     {
                     pushFollow(FOLLOW_slotNumber_in_slot198);
                     slotNumber();
@@ -502,14 +506,14 @@ public class DriftParser extends Parser {
 
 
     // $ANTLR start "slotName"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:85:1: slotName : attributeName ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:118:1: slotName : attributeName ;
     public final void slotName() throws RecognitionException {
         DriftParser.attributeName_return attributeName6 = null;
 
 
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:86:5: ( attributeName )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:86:7: attributeName
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:119:5: ( attributeName )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:119:7: attributeName
             {
             pushFollow(FOLLOW_attributeName_in_slotName219);
             attributeName6=attributeName();
@@ -536,13 +540,13 @@ public class DriftParser extends Parser {
 
 
     // $ANTLR start "slotNumber"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:93:1: slotNumber : '#' Number ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:126:1: slotNumber : '#' Number ;
     public final void slotNumber() throws RecognitionException {
         Token Number7=null;
 
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:94:5: ( '#' Number )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:94:7: '#' Number
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:127:5: ( '#' Number )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:127:7: '#' Number
             {
             match(input,18,FOLLOW_18_in_slotNumber244); 
             Number7=(Token)match(input,Number,FOLLOW_Number_in_slotNumber246); 
@@ -566,14 +570,14 @@ public class DriftParser extends Parser {
 
 
     // $ANTLR start "migrationList"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:101:1: migrationList : 'migrate' ( 'from' migrationSlotList )+ ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:134:1: migrationList : 'migrate' ( 'from' migrationSlotList )+ ;
     public final void migrationList() throws RecognitionException {
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:102:5: ( 'migrate' ( 'from' migrationSlotList )+ )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:102:7: 'migrate' ( 'from' migrationSlotList )+
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:135:5: ( 'migrate' ( 'from' migrationSlotList )+ )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:135:7: 'migrate' ( 'from' migrationSlotList )+
             {
             match(input,19,FOLLOW_19_in_migrationList271); 
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:102:17: ( 'from' migrationSlotList )+
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:135:17: ( 'from' migrationSlotList )+
             int cnt8=0;
             loop8:
             do {
@@ -587,7 +591,7 @@ public class DriftParser extends Parser {
 
                 switch (alt8) {
             	case 1 :
-            	    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:102:18: 'from' migrationSlotList
+            	    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:135:18: 'from' migrationSlotList
             	    {
             	    match(input,20,FOLLOW_20_in_migrationList274); 
             	    pushFollow(FOLLOW_migrationSlotList_in_migrationList276);
@@ -624,11 +628,11 @@ public class DriftParser extends Parser {
 
 
     // $ANTLR start "migrationSlotList"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:105:1: migrationSlotList : migrationSlot ( 'and' migrationSlot )* ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:138:1: migrationSlotList : migrationSlot ( 'and' migrationSlot )* ;
     public final void migrationSlotList() throws RecognitionException {
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:106:5: ( migrationSlot ( 'and' migrationSlot )* )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:107:5: migrationSlot ( 'and' migrationSlot )*
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:139:5: ( migrationSlot ( 'and' migrationSlot )* )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:140:5: migrationSlot ( 'and' migrationSlot )*
             {
 
             	prevSlot = slot;
@@ -638,7 +642,7 @@ public class DriftParser extends Parser {
 
             state._fsp--;
 
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:110:19: ( 'and' migrationSlot )*
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:143:19: ( 'and' migrationSlot )*
             loop9:
             do {
                 int alt9=2;
@@ -651,7 +655,7 @@ public class DriftParser extends Parser {
 
                 switch (alt9) {
             	case 1 :
-            	    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:110:20: 'and' migrationSlot
+            	    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:143:20: 'and' migrationSlot
             	    {
             	    match(input,21,FOLLOW_21_in_migrationSlotList309); 
             	    pushFollow(FOLLOW_migrationSlot_in_migrationSlotList311);
@@ -684,16 +688,16 @@ public class DriftParser extends Parser {
 
 
     // $ANTLR start "migrationSlot"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:113:1: migrationSlot : ( typeSpecifier )? slot ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:146:1: migrationSlot : ( typeSpecifier )? slot ;
     public final void migrationSlot() throws RecognitionException {
         DriftParser.typeSpecifier_return typeSpecifier8 = null;
 
 
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:114:5: ( ( typeSpecifier )? slot )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:114:7: ( typeSpecifier )? slot
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:147:5: ( ( typeSpecifier )? slot )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:147:7: ( typeSpecifier )? slot
             {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:114:7: ( typeSpecifier )?
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:147:7: ( typeSpecifier )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -702,7 +706,7 @@ public class DriftParser extends Parser {
             }
             switch (alt10) {
                 case 1 :
-                    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:114:7: typeSpecifier
+                    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:147:7: typeSpecifier
                     {
                     pushFollow(FOLLOW_typeSpecifier_in_migrationSlot330);
                     typeSpecifier8=typeSpecifier();
@@ -753,14 +757,14 @@ public class DriftParser extends Parser {
     };
 
     // $ANTLR start "attributeName"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:132:1: attributeName : Identifier ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:165:1: attributeName : Identifier ;
     public final DriftParser.attributeName_return attributeName() throws RecognitionException {
         DriftParser.attributeName_return retval = new DriftParser.attributeName_return();
         retval.start = input.LT(1);
 
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:133:5: ( Identifier )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:133:7: Identifier
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:166:5: ( Identifier )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:166:7: Identifier
             {
             match(input,Identifier,FOLLOW_Identifier_in_attributeName356); 
 
@@ -781,18 +785,18 @@ public class DriftParser extends Parser {
 
 
     // $ANTLR start "parentList"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:136:1: parentList : parent ( ',' parent )* ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:169:1: parentList : parent ( ',' parent )* ;
     public final void parentList() throws RecognitionException {
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:137:5: ( parent ( ',' parent )* )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:137:7: parent ( ',' parent )*
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:170:5: ( parent ( ',' parent )* )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:170:7: parent ( ',' parent )*
             {
             pushFollow(FOLLOW_parent_in_parentList373);
             parent();
 
             state._fsp--;
 
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:137:14: ( ',' parent )*
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:170:14: ( ',' parent )*
             loop11:
             do {
                 int alt11=2;
@@ -805,7 +809,7 @@ public class DriftParser extends Parser {
 
                 switch (alt11) {
             	case 1 :
-            	    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:137:15: ',' parent
+            	    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:170:15: ',' parent
             	    {
             	    match(input,22,FOLLOW_22_in_parentList376); 
             	    pushFollow(FOLLOW_parent_in_parentList378);
@@ -838,14 +842,14 @@ public class DriftParser extends Parser {
 
 
     // $ANTLR start "parent"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:140:1: parent : objectName ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:173:1: parent : objectName ;
     public final void parent() throws RecognitionException {
         DriftParser.objectName_return objectName9 = null;
 
 
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:141:5: ( objectName )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:141:7: objectName
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:174:5: ( objectName )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:174:7: objectName
             {
             pushFollow(FOLLOW_objectName_in_parent397);
             objectName9=objectName();
@@ -873,14 +877,14 @@ public class DriftParser extends Parser {
     };
 
     // $ANTLR start "modifierSpecifier"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:147:1: modifierSpecifier : ( 'optional' | 'required' ) ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:180:1: modifierSpecifier : ( 'optional' | 'required' ) ;
     public final DriftParser.modifierSpecifier_return modifierSpecifier() throws RecognitionException {
         DriftParser.modifierSpecifier_return retval = new DriftParser.modifierSpecifier_return();
         retval.start = input.LT(1);
 
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:148:5: ( ( 'optional' | 'required' ) )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:148:7: ( 'optional' | 'required' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:181:5: ( ( 'optional' | 'required' ) )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:181:7: ( 'optional' | 'required' )
             {
             if ( (input.LA(1)>=23 && input.LA(1)<=24) ) {
                 input.consume();
@@ -911,14 +915,14 @@ public class DriftParser extends Parser {
     };
 
     // $ANTLR start "typeSpecifier"
-    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:151:1: typeSpecifier : Identifier ;
+    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:184:1: typeSpecifier : Identifier ;
     public final DriftParser.typeSpecifier_return typeSpecifier() throws RecognitionException {
         DriftParser.typeSpecifier_return retval = new DriftParser.typeSpecifier_return();
         retval.start = input.LT(1);
 
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:152:5: ( Identifier )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:152:7: Identifier
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:185:5: ( Identifier )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:185:7: Identifier
             {
             match(input,Identifier,FOLLOW_Identifier_in_typeSpecifier445); 
 

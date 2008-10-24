@@ -1,3 +1,5 @@
+// $ANTLR 3.1 /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g 2008-10-24 17:27:38
+
 /*
  * Copyright 2008 The Apache Software Foundation.
  * 
@@ -13,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// $ANTLR 3.1 /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g 2008-10-10 16:49:47
-
     package org.vafer.drift.parser;
 
 
@@ -61,15 +61,15 @@ public class DriftLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "/Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g"; }
+    public String getGrammarFileName() { return "/Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g"; }
 
     // $ANTLR start "T__11"
     public final void mT__11() throws RecognitionException {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:7:7: ( 'object' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:7:9: 'object'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:22:7: ( 'object' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:22:9: 'object'
             {
             match("object"); 
 
@@ -89,8 +89,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:8:7: ( 'extends' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:8:9: 'extends'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:23:7: ( 'extends' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:23:9: 'extends'
             {
             match("extends"); 
 
@@ -110,8 +110,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:9:7: ( '{' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:9:9: '{'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:24:7: ( '{' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:24:9: '{'
             {
             match('{'); 
 
@@ -130,8 +130,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:10:7: ( '}' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:10:9: '}'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:25:7: ( '}' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:25:9: '}'
             {
             match('}'); 
 
@@ -150,8 +150,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:11:7: ( ';' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:11:9: ';'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:26:7: ( ';' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:26:9: ';'
             {
             match(';'); 
 
@@ -170,8 +170,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:12:7: ( '[' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:12:9: '['
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:27:7: ( '[' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:27:9: '['
             {
             match('['); 
 
@@ -190,8 +190,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:13:7: ( ']' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:13:9: ']'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:28:7: ( ']' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:28:9: ']'
             {
             match(']'); 
 
@@ -210,8 +210,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:14:7: ( '#' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:14:9: '#'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:29:7: ( '#' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:29:9: '#'
             {
             match('#'); 
 
@@ -230,8 +230,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:15:7: ( 'migrate' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:15:9: 'migrate'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:30:7: ( 'migrate' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:30:9: 'migrate'
             {
             match("migrate"); 
 
@@ -251,8 +251,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:16:7: ( 'from' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:16:9: 'from'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:31:7: ( 'from' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:31:9: 'from'
             {
             match("from"); 
 
@@ -272,8 +272,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:17:7: ( 'and' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:17:9: 'and'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:32:7: ( 'and' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:32:9: 'and'
             {
             match("and"); 
 
@@ -293,8 +293,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:18:7: ( ',' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:18:9: ','
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:33:7: ( ',' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:33:9: ','
             {
             match(','); 
 
@@ -313,8 +313,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:19:7: ( 'optional' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:19:9: 'optional'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:34:7: ( 'optional' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:34:9: 'optional'
             {
             match("optional"); 
 
@@ -334,8 +334,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:20:7: ( 'required' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:20:9: 'required'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:35:7: ( 'required' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:35:9: 'required'
             {
             match("required"); 
 
@@ -355,11 +355,11 @@ public class DriftLexer extends Lexer {
         try {
             int _type = Identifier;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:156:5: ( Letter ( Letter | Digit )* )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:156:7: Letter ( Letter | Digit )*
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:189:5: ( Letter ( Letter | Digit )* )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:189:7: Letter ( Letter | Digit )*
             {
             mLetter(); 
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:156:14: ( Letter | Digit )*
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:189:14: ( Letter | Digit )*
             loop1:
             do {
                 int alt1=2;
@@ -372,7 +372,7 @@ public class DriftLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:
+            	    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:
             	    {
             	    if ( input.LA(1)=='$'||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u1FFF')||(input.LA(1)>='\u3040' && input.LA(1)<='\u318F')||(input.LA(1)>='\u3300' && input.LA(1)<='\u337F')||(input.LA(1)>='\u3400' && input.LA(1)<='\u3D2D')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FFF')||(input.LA(1)>='\uF900' && input.LA(1)<='\uFAFF') ) {
             	        input.consume();
@@ -408,11 +408,11 @@ public class DriftLexer extends Lexer {
         try {
             int _type = Number;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:160:5: ( Digit ( Digit )* )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:160:7: Digit ( Digit )*
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:193:5: ( Digit ( Digit )* )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:193:7: Digit ( Digit )*
             {
             mDigit(); 
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:160:13: ( Digit )*
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:193:13: ( Digit )*
             loop2:
             do {
                 int alt2=2;
@@ -425,7 +425,7 @@ public class DriftLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:160:14: Digit
+            	    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:193:14: Digit
             	    {
             	    mDigit(); 
 
@@ -451,8 +451,8 @@ public class DriftLexer extends Lexer {
     // $ANTLR start "Letter"
     public final void mLetter() throws RecognitionException {
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:165:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:198:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:
             {
             if ( input.LA(1)=='$'||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u1FFF')||(input.LA(1)>='\u3040' && input.LA(1)<='\u318F')||(input.LA(1)>='\u3300' && input.LA(1)<='\u337F')||(input.LA(1)>='\u3400' && input.LA(1)<='\u3D2D')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FFF')||(input.LA(1)>='\uF900' && input.LA(1)<='\uFAFF') ) {
                 input.consume();
@@ -475,8 +475,8 @@ public class DriftLexer extends Lexer {
     // $ANTLR start "Digit"
     public final void mDigit() throws RecognitionException {
         try {
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:183:5: ( '0' .. '9' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:183:7: '0' .. '9'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:216:5: ( '0' .. '9' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:216:7: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -493,12 +493,12 @@ public class DriftLexer extends Lexer {
         try {
             int _type = COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:187:5: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:187:7: '/*' ( options {greedy=false; } : . )* '*/'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:220:5: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:220:7: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:187:12: ( options {greedy=false; } : . )*
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:220:12: ( options {greedy=false; } : . )*
             loop3:
             do {
                 int alt3=2;
@@ -523,7 +523,7 @@ public class DriftLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:187:40: .
+            	    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:220:40: .
             	    {
             	    matchAny(); 
 
@@ -554,12 +554,12 @@ public class DriftLexer extends Lexer {
         try {
             int _type = LINE_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:191:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:191:7: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:224:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:224:7: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
             {
             match("//"); 
 
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:191:12: (~ ( '\\n' | '\\r' ) )*
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:224:12: (~ ( '\\n' | '\\r' ) )*
             loop4:
             do {
                 int alt4=2;
@@ -572,7 +572,7 @@ public class DriftLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:191:12: ~ ( '\\n' | '\\r' )
+            	    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:224:12: ~ ( '\\n' | '\\r' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -592,7 +592,7 @@ public class DriftLexer extends Lexer {
                 }
             } while (true);
 
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:191:26: ( '\\r' )?
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:224:26: ( '\\r' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -601,7 +601,7 @@ public class DriftLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:191:26: '\\r'
+                    // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:224:26: '\\r'
                     {
                     match('\r'); 
 
@@ -628,8 +628,8 @@ public class DriftLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:194:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
-            // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:194:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:227:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+            // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:227:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
             {
             if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||(input.LA(1)>='\f' && input.LA(1)<='\r')||input.LA(1)==' ' ) {
                 input.consume();
@@ -653,138 +653,138 @@ public class DriftLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | Identifier | Number | COMMENT | LINE_COMMENT | WS )
+        // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | Identifier | Number | COMMENT | LINE_COMMENT | WS )
         int alt6=19;
         alt6 = dfa6.predict(input);
         switch (alt6) {
             case 1 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:10: T__11
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:10: T__11
                 {
                 mT__11(); 
 
                 }
                 break;
             case 2 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:16: T__12
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:16: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
             case 3 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:22: T__13
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:22: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
             case 4 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:28: T__14
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:28: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 5 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:34: T__15
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:34: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 6 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:40: T__16
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:40: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 7 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:46: T__17
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:46: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 8 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:52: T__18
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:52: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 9 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:58: T__19
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:58: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 10 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:64: T__20
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:64: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 11 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:70: T__21
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:70: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 12 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:76: T__22
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:76: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 13 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:82: T__23
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:82: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 14 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:88: T__24
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:88: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 15 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:94: Identifier
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:94: Identifier
                 {
                 mIdentifier(); 
 
                 }
                 break;
             case 16 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:105: Number
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:105: Number
                 {
                 mNumber(); 
 
                 }
                 break;
             case 17 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:112: COMMENT
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:112: COMMENT
                 {
                 mCOMMENT(); 
 
                 }
                 break;
             case 18 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:120: LINE_COMMENT
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:120: LINE_COMMENT
                 {
                 mLINE_COMMENT(); 
 
                 }
                 break;
             case 19 :
-                // /Users/tcurdt/Desktop/drift/src/main/antlr/org/vafer/drift/Drift.g:1:133: WS
+                // /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g:1:133: WS
                 {
                 mWS(); 
 

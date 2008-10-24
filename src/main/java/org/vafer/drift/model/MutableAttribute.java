@@ -43,7 +43,7 @@ public final class MutableAttribute extends MutableSlot implements ImmutableAttr
 
 	public String toString() {
 		final StringBuilder sb = new StringBuilder();
-		sb.append(name).append(":").append(super.toString()).append("}");
+		sb.append(name).append(":").append(super.toString());
 		return sb.toString();
 	}
 }

@@ -25,14 +25,16 @@ import org.vafer.drift.model.Schema;
 public final class ParserTestCase extends TestCase {
 
 	private final String[] grammars = {
-			"Simple.dg"
+			"Simple.dg",
+			"Migration.dg",
+			"Complex.dg"
 	};
 	
 	public void testParsing() throws Exception {
 		
 		for (int i = 0; i < grammars.length; i++) {
 			
-			final InputStream input = getClass().getResourceAsStream(grammars[i]); 
+			final InputStream input = getClass().getResourceAsStream("/grammars/" + grammars[i]); 
 			
 			assertNotNull(input);
 

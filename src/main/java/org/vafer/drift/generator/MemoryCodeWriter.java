@@ -21,7 +21,7 @@ public final class MemoryCodeWriter implements CodeWriter, ResourceReader {
 	}
 
 	public byte[] getBytes(String name) {
-		
+
 		final String content = sources.get(name);
 
 		if (content == null) {

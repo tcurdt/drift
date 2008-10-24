@@ -26,7 +26,7 @@ import org.apache.tools.ant.ProjectHelper;
 public final class GenerateAntTestCase extends TestCase {
 
 	private Project project;
-
+	
 	protected void setUp() throws Exception {
 		project = new Project();
 		project.setCoreLoader(getClass().getClassLoader());
@@ -36,19 +36,34 @@ public final class GenerateAntTestCase extends TestCase {
 		
 		assertNotNull(url);
 		
-		File buildFile = new File(url.getFile());
-		project.setBaseDir(buildFile.getParentFile());
-		
-		final ProjectHelper helper = ProjectHelper.getProjectHelper();
-		helper.parse(project, buildFile);
+		project.setBaseDir(new File(""));
 
+		final ProjectHelper helper = ProjectHelper.getProjectHelper();
+		final File buildFile = new File(url.getFile());
+		helper.parse(project, buildFile);
 	}
 
-	public void testGeneration() {
-		project.executeTarget("generate");
+	public void testSimple() {
 
-		// FIXME proper class path
-		assertTrue("source code not generated", new File("target/test-classes/").exists());
+		project.executeTarget("simple");
+
+		assertTrue("Source code not generated", new File("target/tests/simple/Simple.java").exists());
+	}
+	
+	public void testMigration() {
+
+		project.executeTarget("migration");
+
+		assertTrue("Source code not generated", new File("target/tests/migration/Migration.java").exists());
+	}
+
+	public void testComplex() {
+
+		project.executeTarget("complex");
+
+		assertTrue("Source code not generated", new File("target/tests/complex/CommonEvent.java").exists());
+		assertTrue("Source code not generated", new File("target/tests/complex/Person.java").exists());
+		assertTrue("Source code not generated", new File("target/tests/complex/ComplexEvent.java").exists());
 	}
 
 }

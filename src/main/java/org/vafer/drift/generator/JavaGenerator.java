@@ -49,8 +49,13 @@ public final class JavaGenerator {
 		final InputStream is = getClass().getResourceAsStream("/templates/java.stg");
 		final InputStreamReader reader = new InputStreamReader(is);
 		final StringTemplateGroup group = new StringTemplateGroup(reader, AngleBracketTemplateLexer.class);
+		group.registerRenderer(String.class, new DriftRenderer());
+		group.registerRenderer(Integer.class, new DriftRenderer());
 
 		final ImmutableObject[] objects = pSchema.getObjects();
+		
+		final String packageName = "org.vafer.drift.generator.generated";
+		final String resourcePrefix = packageName.replace('.', '/') + '/';
 		
 		for (int i = 0; i < objects.length; i++) {
 			final ImmutableObject object = objects[i];
@@ -77,16 +82,22 @@ public final class JavaGenerator {
 			*/
 			
 			final StringTemplate t = group.getInstanceOf("object");
-			t.registerRenderer(String.class, new CaseRenderer());
-	        t.setAttribute("package", "com.joost.tracking");
+	        t.setAttribute("package", packageName);
 	        t.setAttribute("name", object.getName());
 	        t.setAttribute("parents", object.getParents());
 	        t.setAttribute("attributes", object.getAttributes());
 	        t.setAttribute("slots", object.getSlots());
+	        t.setAttribute("migration", "java.lang.Object");
 	        
-	        pWriter.write(object.getName() + ".java", t.toString());
+	        pWriter.write(resourcePrefix + object.getName() + ".java", t.toString());
 	        
 		}
+
+		final StringTemplate t = group.getInstanceOf("factory");
+		t.registerRenderer(String.class, new DriftRenderer());
+        t.setAttribute("package", packageName);
+        t.setAttribute("objects", objects);
+        pWriter.write(resourcePrefix + "ObjectFactory.java", t.toString());
 				
 	}
 }

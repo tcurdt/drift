@@ -1,5 +1,5 @@
 /* The most simple drift grammar */
 
-object Simple {
+object SimpleTest {
   string simple;
 }

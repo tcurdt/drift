@@ -17,7 +17,7 @@ package org.vafer.drift.generator;
 
 import org.antlr.stringtemplate.AttributeRenderer;
 
-public final class CaseRenderer implements AttributeRenderer {
+public final class DriftRenderer implements AttributeRenderer {
 
 	public String toString(Object o) {
 		return o.toString();
@@ -30,12 +30,15 @@ public final class CaseRenderer implements AttributeRenderer {
 				s[0] = Character.toUpperCase(s[0]);
 			}
 			return new String(s);					
+		} else if ("negative".equals(formatName)) {
+			return o.toString().replace('-', 'N');
 		} else if ("upper".equals(formatName)) {
 			return o.toString().toUpperCase();			
 		} else if ("lower".equals(formatName)) {
 			return o.toString().toLowerCase();			
 		} else {
-			throw new IllegalArgumentException("Unsupported format name");
+			
+			throw new IllegalArgumentException("Unsupported format name: " + formatName);
 		}
 	}
 

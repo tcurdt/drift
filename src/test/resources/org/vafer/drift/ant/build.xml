@@ -1,7 +1,29 @@
-<project name="test" basedir="." default="generate">
+<project name="test" basedir="." default="simple">
 
-	<target name="generate" description="Generate source files">
-	    <echo message="Generating"/>
+	<taskdef name="drift" classname="org.vafer.drift.ant.DriftAntTask" />
+
+	<target name="simple">
+		<mkdir dir="target/tests/simple"/>
+	    <drift
+	    	schemaFile="src/test/resources/grammars/Simple.dg"
+			outputDir="target/tests/simple"
+			/>
+	</target>
+
+	<target name="migration">
+		<mkdir dir="target/tests/migration"/>
+	    <drift
+			schemaFile="src/test/resources/grammars/Migration.dg"
+			outputDir="target/tests/migration"
+			/>
+	</target>
+
+	<target name="complex">
+		<mkdir dir="target/tests/complex"/>
+	    <drift
+			schemaFile="src/test/resources/grammars/Complex.dg"
+			outputDir="target/tests/complex"
+			/>
 	</target>
 
 </project>

@@ -88,11 +88,15 @@ attributeDeclaration
         }
 
         attribute = object.addAttribute(slotNumber);
+
+        if (slotName == null) {
+            slotName = $attributeName.text;
+        }
+
         attribute.setSlotName(slotName);
         
         attribute.setName($attributeName.text);
-
-	attribute.setType($typeSpecifier.text);
+	    attribute.setType($typeSpecifier.text);
       
         if ("required".equals($modifierSpecifier.text)) {
           attribute.setRequired(true);

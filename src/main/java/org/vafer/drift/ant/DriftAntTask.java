@@ -52,11 +52,11 @@ public final class DriftAntTask extends Task {
 	public void execute() {
 		
 		if (outputDir == null || !outputDir.isDirectory()) {
-			throw new BuildException("You need to point the 'outputDir' attribute to the destination directory.");
+			throw new BuildException("Attribtue 'outputDir' (" + outputDir + ") needs to point to a proper destination directory.");
 		}
 
 		if (schemaFile == null || !schemaFile.isFile()) {
-			throw new BuildException("You need to point the 'schemaFile' attribute to the schema.");
+			throw new BuildException("Attribtue 'schemaFile' (" + schemaFile + ") needs to point to a schema file.");
 		}
 
 		try {

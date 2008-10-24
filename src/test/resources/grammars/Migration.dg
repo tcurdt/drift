@@ -1,4 +1,4 @@
-object Migration {
+object MigrationTest {
 
   // simple
   string simple;

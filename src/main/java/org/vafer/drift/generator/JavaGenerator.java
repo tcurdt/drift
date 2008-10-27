@@ -28,6 +28,12 @@ import org.vafer.drift.model.Schema;
 
 public final class JavaGenerator {
 
+	private final String packageName;
+	
+	public JavaGenerator( final String pPackageName ) {
+		packageName = pPackageName;
+	}
+	
 	/*
 	private void printSlot( ImmutableSlot slot, int level ) {
 		
@@ -54,7 +60,6 @@ public final class JavaGenerator {
 
 		final ImmutableObject[] objects = pSchema.getObjects();
 		
-		final String packageName = "org.vafer.drift.generator.generated";
 		final String resourcePrefix = packageName.replace('.', '/') + '/';
 		
 		for (int i = 0; i < objects.length; i++) {

@@ -29,6 +29,7 @@ public final class DriftAntTask extends Task {
 
 	private File schemaFile;
 	private File outputDir;
+	private String packageName;
 	
 	public File getSchemaFile() {
 		return schemaFile;
@@ -47,9 +48,19 @@ public final class DriftAntTask extends Task {
 		this.outputDir = outputDir;
 	}
 
+	public String getPackageName() {
+		return packageName;
+	}
 
+	public void setPackageName(String packageName) {
+		this.packageName = packageName;
+	}
 
 	public void execute() {
+
+		if (packageName == null) {
+			throw new BuildException("Attribtue 'packageName' needs to be set.");			
+		}
 		
 		if (outputDir == null || !outputDir.isDirectory()) {
 			throw new BuildException("Attribtue 'outputDir' (" + outputDir + ") needs to point to a proper destination directory.");
@@ -62,7 +73,7 @@ public final class DriftAntTask extends Task {
 		try {
 			final Schema schema = Schema.build(new FileInputStream(schemaFile));
 				
-			final JavaGenerator javaGenerator = new JavaGenerator();
+			final JavaGenerator javaGenerator = new JavaGenerator(packageName);
 			
 			final FileCodeWriter writer = new FileCodeWriter(outputDir);
 			

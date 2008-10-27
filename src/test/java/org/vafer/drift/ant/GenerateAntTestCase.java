@@ -47,23 +47,23 @@ public final class GenerateAntTestCase extends TestCase {
 
 		project.executeTarget("simple");
 
-		assertTrue("Source code not generated", new File("target/tests/simple/Simple.java").exists());
+		assertTrue("Source code not generated", new File("target/tests/simple/org/vafer/drift/generator/generated/SimpleTest.java").exists());
 	}
 	
 	public void testMigration() {
 
 		project.executeTarget("migration");
 
-		assertTrue("Source code not generated", new File("target/tests/migration/Migration.java").exists());
+		assertTrue("Source code not generated", new File("target/tests/migration/org/vafer/drift/generator/generated/MigrationTest.java").exists());
 	}
 
 	public void testComplex() {
 
 		project.executeTarget("complex");
 
-		assertTrue("Source code not generated", new File("target/tests/complex/CommonEvent.java").exists());
-		assertTrue("Source code not generated", new File("target/tests/complex/Person.java").exists());
-		assertTrue("Source code not generated", new File("target/tests/complex/ComplexEvent.java").exists());
+		assertTrue("Source code not generated", new File("target/tests/complex/org/vafer/drift/generator/generated/CommonEvent.java").exists());
+		assertTrue("Source code not generated", new File("target/tests/complex/org/vafer/drift/generator/generated/Person.java").exists());
+		assertTrue("Source code not generated", new File("target/tests/complex/org/vafer/drift/generator/generated/ComplexEvent.java").exists());
 	}
 
 }

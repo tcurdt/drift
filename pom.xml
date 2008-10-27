@@ -127,7 +127,7 @@
 
     </dependencies>
 
-   <distributionManagement>
+    <distributionManagement>
         <site>
             <id>website</id>
             <url>scpexe://vafer.org/home/tcurdt/apache2/vafer.org/www/projects/drift</url>

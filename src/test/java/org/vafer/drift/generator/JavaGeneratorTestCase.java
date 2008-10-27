@@ -45,7 +45,7 @@ public final class JavaGeneratorTestCase extends TestCase {
 		testCount++;
 	}
 
-	private final class MutableInt {
+	private static final class MutableInt {
 		int value;
 	}
 	
@@ -57,7 +57,7 @@ public final class JavaGeneratorTestCase extends TestCase {
 
 		assertEquals(1, schema.getObjects().length); 
 		
-		final JavaGenerator javaGenerator = new JavaGenerator();
+		final JavaGenerator javaGenerator = new JavaGenerator("org.vafer.drift.generator.generated");
 		
 		final MutableInt count = new MutableInt();
 		
@@ -75,7 +75,7 @@ public final class JavaGeneratorTestCase extends TestCase {
 	private CompilationResult compile( final InputStream input ) throws IOException {
 		final Schema schema = Schema.build(input);
 
-		final JavaGenerator javaGenerator = new JavaGenerator();
+		final JavaGenerator javaGenerator = new JavaGenerator("org.vafer.drift.generator.generated");
 		final MemoryCodeWriter writer = new MemoryCodeWriter();		
 		javaGenerator.generate(schema, writer);
 		

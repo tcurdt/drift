@@ -123,7 +123,7 @@ public final class MutableObject implements ImmutableObject {
 		}		
 	}
 	
-	public final class FlatStruct implements ImmutableObject {
+	public static final class FlatStruct implements ImmutableObject {
 
 		private final String name;
 		private final Set<String> parents;

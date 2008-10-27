@@ -14,6 +14,13 @@ public final class FileCodeWriter implements CodeWriter {
 	
 	public void write(String sourceName, String sourceContent) throws IOException {
         final File output = new File(outputDir, sourceName);
+        
+        final File parent = output.getParentFile();
+        
+        if (!parent.exists()) {
+        	parent.mkdirs();
+        }
+        
         final FileWriter writer = new FileWriter(output);
         writer.append(sourceContent);
         writer.close();

@@ -68,8 +68,6 @@
             <artifactId>ant</artifactId>
             <version>1.7.1</version>
         </dependency>
-
-        <!-- still waiting for them to show up in the repo -->
         <dependency>
             <groupId>org.antlr</groupId>
             <artifactId>antlr</artifactId>
@@ -98,7 +96,7 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-jci-core</artifactId>
             <version>1.0</version>
-            <!-- <scope>tests</scope> -->
+            <scope>tests</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

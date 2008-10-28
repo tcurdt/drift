@@ -1,4 +1,4 @@
-// $ANTLR 3.1 /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g 2008-10-24 17:27:38
+// $ANTLR 3.1 /Users/tcurdt/Development/drift/src/main/antlr/org/vafer/drift/Drift.g 2008-10-28 18:07:49
 
 /*
  * Copyright 2008 The Apache Software Foundation.

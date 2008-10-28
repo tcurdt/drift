@@ -1,5 +1,11 @@
 object CommonEvent {
-	string test;
+	string string;
+	bool bool;
+	byte byte;
+	double double;
+	int16 int16;
+	int32 int32;
+	int64 int64;
 }
 
 object Person {

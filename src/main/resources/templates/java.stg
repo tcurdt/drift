@@ -1,21 +1,6 @@
 group java;
 
 factory(package,objects) ::= <<
-/*
- * Copyright 2008 The Apache Software Foundation.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *      http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 <if(package)>package <package>;<endif>
 
 import org.vafer.drift.DriftObject;
@@ -47,21 +32,6 @@ public final class ObjectFactory implements DriftObjectFactory {
 >>
 
 object(package,name,parents,attributes,slots,migration) ::= <<
-/*
- * Copyright 2008 The Apache Software Foundation.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *      http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 <if(package)>package <package>;<endif>
 
 import org.vafer.drift.*;
@@ -76,16 +46,16 @@ public final class <name> implements DriftObject, java.io.Serializable {
  	private static final long serialVersionUID = 1L;
  
     <attributes:{ a |
-    private <(declMap.(a.type))(a.type)> <a.name>;
+    private <(declMap.(a.type))(a.type)> a<a.name; format="capitalizeFirst">;
     }; separator="\n">
  
     <attributes:{ a |
     public <(declMap.(a.type))(a.type)> get<a.name; format="capitalizeFirst">() {
-         return this.<a.name>;
+         return a<a.name; format="capitalizeFirst">;
     }
      
-    public void set<a.name; format="capitalizeFirst">( final <(declMap.(a.type))(a.type)> <a.name> ) {
-         this.<a.name> = <a.name>;
+    public void set<a.name; format="capitalizeFirst">( final <(declMap.(a.type))(a.type)> a<a.name; format="capitalizeFirst"> ) {
+         this.a<a.name; format="capitalizeFirst"> = a<a.name; format="capitalizeFirst">;
     }
     
     }>
@@ -138,7 +108,7 @@ open(x) ::= <<
       Migration.getInstance().convert_<slotid(x)>_to_<slotid(y)>(
     }>
   <else> 
-    this.<x.name> = 
+    this.a<x.name; format="capitalizeFirst"> = 
   <endif>
 >>
 
@@ -152,19 +122,54 @@ slotid(slot) ::= <<
 <if (slot.slotName)><slot.slotName><else><slot.slotNumber; format="negative"><endif>
 >>
 
-writeSTRING(a) ::= <<
+writeBOOL(a) ::= <<
 		{  
 			final TAttribute field = new TAttribute();
 			field.name = "<a.name>";
-			field.type = TType.STRING;
+			field.type = TType.BOOL;
 			field.id = <a.slotNumber>;
 			
 			oprot.writeAttributeBegin(field);		
-			oprot.writeString(this.<a.name>);				
+			oprot.writeBool(this.a<a.name; format="capitalizeFirst">);				
 			oprot.writeAttributeEnd();
 		}
 >>
-
+writeBYTE(a) ::= <<
+		{  
+			final TAttribute field = new TAttribute();
+			field.name = "<a.name>";
+			field.type = TType.BYTE;
+			field.id = <a.slotNumber>;
+			
+			oprot.writeAttributeBegin(field);		
+			oprot.writeByte(this.a<a.name; format="capitalizeFirst">);				
+			oprot.writeAttributeEnd();
+		}
+>>
+writeDOUBLE(a) ::= <<
+		{  
+			final TAttribute field = new TAttribute();
+			field.name = "<a.name>";
+			field.type = TType.DOUBLE;
+			field.id = <a.slotNumber>;
+			
+			oprot.writeAttributeBegin(field);		
+			oprot.writeDouble(this.a<a.name; format="capitalizeFirst">);				
+			oprot.writeAttributeEnd();
+		}
+>>
+writeI16(a) ::= <<
+		{  
+			final TAttribute field = new TAttribute();
+			field.name = "<a.name>";
+			field.type = TType.I16;
+			field.id = <a.slotNumber>;
+			
+			oprot.writeAttributeBegin(field);		
+			oprot.writeI16(this.a<a.name; format="capitalizeFirst">);				
+			oprot.writeAttributeEnd();
+		}
+>>
 writeI32(a) ::= <<
 		{  
 			final TAttribute field = new TAttribute();
@@ -173,24 +178,68 @@ writeI32(a) ::= <<
 			field.id = <a.slotNumber>;
 			
 			oprot.writeAttributeBegin(field);		
-			oprot.writeI32(this.<a.name>);				
+			oprot.writeI32(this.a<a.name; format="capitalizeFirst">);				
 			oprot.writeAttributeEnd();
 		}
 >>
-
+writeI64(a) ::= <<
+		{  
+			final TAttribute field = new TAttribute();
+			field.name = "<a.name>";
+			field.type = TType.I64;
+			field.id = <a.slotNumber>;
+			
+			oprot.writeAttributeBegin(field);		
+			oprot.writeI64(this.a<a.name; format="capitalizeFirst">);				
+			oprot.writeAttributeEnd();
+		}
+>>
+writeSTRING(a) ::= <<
+		{  
+			final TAttribute field = new TAttribute();
+			field.name = "<a.name>";
+			field.type = TType.STRING;
+			field.id = <a.slotNumber>;
+			
+			oprot.writeAttributeBegin(field);		
+			oprot.writeString(this.a<a.name; format="capitalizeFirst">);				
+			oprot.writeAttributeEnd();
+		}
+>>
 writeOBJECT(a) ::= <<
-		if (this.<a.name> != null) {  
+		if (this.a<a.name; format="capitalizeFirst"> != null) {  
 			final TAttribute field = new TAttribute();
 			field.name = "<a.name>";
 			field.type = TType.OBJECT;
 			field.id = <a.slotNumber>;
 			
 			oprot.writeAttributeBegin(field);		
-			this.<a.name>.write(oprot);				
+			this.a<a.name; format="capitalizeFirst">.write(oprot);				
 			oprot.writeAttributeEnd();
 		}
 >>
 
+readBOOL(a) ::= <<
+		final boolean tmp = iprot.readBool();
+>>
+readBYTE(a) ::= <<
+		final byte tmp = iprot.readByte();
+>>
+readDOUBLE(a) ::= <<
+		final double tmp = iprot.readDouble();
+>>
+readI16(a) ::= <<
+		final short tmp = iprot.readI16();
+>>
+readI32(a) ::= <<
+		final int tmp = iprot.readI32();
+>>
+readI64(a) ::= <<
+		final long tmp = iprot.readI64();
+>>
+readSTRING(a) ::= <<
+		final String tmp = iprot.readString();
+>>
 readOBJECT(a) ::= <<
 		final TObject object = iprot.readObjectBegin();
 		final DriftObject dobject = ObjectFactory.getInstance().createDriftObject(object);
@@ -201,17 +250,15 @@ readOBJECT(a) ::= <<
 		iprot.readObjectEnd();
 >>
 
-readSTRING(a) ::= <<
-		final String tmp = iprot.readString();
->>
 
-readI32(a) ::= <<
-		final int tmp = iprot.readI32();
->>
-
-declOBJECT(t) ::= << <t> >>
-declSTRING(t) ::= << String >>
+declBOOL(t) ::= << boolean >>
+declBYTE(t) ::= << byte >>
+declDOUBLE(t) ::= << double >>
+declI16(t) ::= << short >>
 declI32(t) ::= << int >>
+declI64(t) ::= << long >>
+declSTRING(t) ::= << String >>
+declOBJECT(t) ::= << <t> >>
 
 writeMap ::= [
         "bool":"writeBOOL",
@@ -219,6 +266,7 @@ writeMap ::= [
         "double":"writeDOUBLE",
         "int16":"writeI16",
         "int32":"writeI32",
+        "int64":"writeI64",
         "string":"writeSTRING",
         "map":"writeMAP",
         "set":"writeSET",
@@ -232,6 +280,7 @@ readMap ::= [
         "double":"readDOUBLE",
         "int16":"readI16",
         "int32":"readI32",
+        "int64":"readI64",
         "string":"readSTRING",
         "map":"readMAP",
         "set":"readSET",
@@ -245,6 +294,7 @@ declMap ::= [
         "double":"declDOUBLE",
         "int16":"declI16",
         "int32":"declI32",
+        "int64":"declI64",
         "string":"declSTRING",
         "map":"declMAP",
         "set":"declSET",

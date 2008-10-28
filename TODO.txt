@@ -1,7 +1,19 @@
+HGH
+o testcases
+o copy constructor
+o configurable base class
+o implement equals
+o implement compareTo
+
+MED
+o implement
+  - map
+  - set
+  - list
+
+LOW
 o migration joins
 o migration splits
-o implement maps,sets,lists
-o testcases
 o language support
   - ruby
   - objective-c

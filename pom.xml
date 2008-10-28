@@ -39,6 +39,14 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <forkMode>never</forkMode>
@@ -90,7 +98,7 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-jci-core</artifactId>
             <version>1.0</version>
-            <scope>tests</scope>
+            <!-- <scope>tests</scope> -->
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -133,4 +141,5 @@
             <url>scpexe://vafer.org/home/tcurdt/apache2/vafer.org/www/projects/drift</url>
         </site>
     </distributionManagement>
+        
 </project>

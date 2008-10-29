@@ -82,7 +82,9 @@ public final class DriftAntTask extends Task {
 		try {
 			final Schema schema = Schema.build(new FileInputStream(schemaFile));
 				
-			final JavaGenerator javaGenerator = new JavaGenerator(packageName, baseClass);
+			final JavaGenerator javaGenerator = (baseClass != null)? 
+				new JavaGenerator(packageName, baseClass):
+				new JavaGenerator(packageName);
 			
 			final FileCodeWriter writer = new FileCodeWriter(outputDir);
 			

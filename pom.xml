@@ -9,7 +9,7 @@
     <groupId>org.vafer</groupId>
     <artifactId>drift</artifactId>
     <name>drift</name>
-    <version>0.1</version>
+    <version>0.2-SNAPSHOT</version>
     <description>
         Drift can be used to serialize and deserialze objects in a cross
         language manner. It will generate code based on a grammar and provide

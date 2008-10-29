@@ -31,23 +31,37 @@ public final class ObjectFactory implements DriftObjectFactory {
 }
 >>
 
-object(package,name,parents,attributes,slots,migration) ::= <<
+object(package,baseClass,name,parents,attributes,slots,migration) ::= <<
 <if(package)>package <package>;<endif>
 
 import org.vafer.drift.*;
 import org.vafer.drift.protocol.*;
 import org.vafer.drift.protocol.fields.*;
 import org.vafer.drift.utils.ProtocolUtils;
-
+import <baseClass>;
 
 <if(parents)>// extends <parents; separator=","><endif>
-public final class <name> implements DriftObject, java.io.Serializable {
- 
- 	private static final long serialVersionUID = 1L;
+public final class <name> extends <baseClass> {
+
+	private static final long serialVersionUID = 1L;
  
     <attributes:{ a |
     private <(declMap.(a.type))(a.type)> a<a.name; format="capitalizeFirst">;
     }; separator="\n">
+
+
+	public <name>() {
+	}
+	
+	public <name>( final <name> other ) throws DriftException {
+		readFromDriftObject(other);		
+	}
+
+    <parents:{ p |
+	public <name>( final <p> other ) throws DriftException {		
+		readFromDriftObject(other);		
+	}    
+    }>
  
     <attributes:{ a |
     public <(declMap.(a.type))(a.type)> get<a.name; format="capitalizeFirst">() {
@@ -60,7 +74,7 @@ public final class <name> implements DriftObject, java.io.Serializable {
     
     }>
  
-	public void read( final Protocol iprot) throws DriftException {
+ 	public void read( final Protocol iprot) throws DriftException {
 		TAttribute field;
 
 		for(;;) {
@@ -98,6 +112,37 @@ public final class <name> implements DriftObject, java.io.Serializable {
 		oprot.writeAttributeStop();				
 		oprot.writeObjectEnd();	
 	}
+	
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+
+        <attributes:{ a |
+        <(hashcodeMap.(a.type))(a)>
+        }>
+
+		return result;
+	}
+	
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null)
+			return false;
+		if (getClass() != o.getClass())
+			return false;
+		final <name> other = (<name>) o;
+
+        <attributes:{ a |
+        <(equalsMap.(a.type))(a)>
+        }>
+
+		return true;
+	}
+	
+	public int compareTo(Object o) {
+		return 0;
+	}
 }
 >>
 
@@ -121,6 +166,69 @@ close(x) ::= <<
 slotid(slot) ::= <<
 <if (slot.slotName)><slot.slotName><else><slot.slotNumber; format="negative"><endif>
 >>
+
+hashcodeBOOL(a) ::= <<
+	result = prime * result + (a<a.name; format="capitalizeFirst"> ? 1231 : 1237);
+>>
+hashcodeBYTE(a) ::= <<
+	result = prime * result + a<a.name; format="capitalizeFirst">;
+>>
+hashcodeDOUBLE(a) ::= <<
+	{  
+		long temp;
+		temp = Double.doubleToLongBits(a<a.name; format="capitalizeFirst">);
+		result = prime * result + (int) (temp ^ (temp \>\>\> 32));
+	}
+>>
+hashcodeI16(a) ::= <<
+	result = prime * result + a<a.name; format="capitalizeFirst">;
+>>
+hashcodeI32(a) ::= <<
+	result = prime * result + a<a.name; format="capitalizeFirst">;
+>>
+hashcodeI64(a) ::= <<
+	result = prime * result + (int) (a<a.name; format="capitalizeFirst"> ^ (a<a.name; format="capitalizeFirst"> \>\>\> 32));
+>>
+hashcodeSTRING(a) ::= <<
+	result = prime * result + ((a<a.name; format="capitalizeFirst"> == null) ? 0 : a<a.name; format="capitalizeFirst">.hashCode());
+>>
+hashcodeOBJECT(a) ::= <<
+	result = prime * result + ((a<a.name; format="capitalizeFirst"> == null) ? 0 : a<a.name; format="capitalizeFirst">.hashCode());
+>>
+
+equalsBOOL(a) ::= <<
+	if (a<a.name; format="capitalizeFirst"> != other.a<a.name; format="capitalizeFirst">) return false;
+>>
+equalsBYTE(a) ::= <<
+	if (a<a.name; format="capitalizeFirst"> != other.a<a.name; format="capitalizeFirst">) return false;
+>>
+equalsDOUBLE(a) ::= <<
+	if (Double.doubleToLongBits(a<a.name; format="capitalizeFirst">) != Double.doubleToLongBits(other.a<a.name; format="capitalizeFirst">)) return false;
+>>
+equalsI16(a) ::= <<
+	if (a<a.name; format="capitalizeFirst"> != other.a<a.name; format="capitalizeFirst">) return false;
+>>
+equalsI32(a) ::= <<
+	if (a<a.name; format="capitalizeFirst"> != other.a<a.name; format="capitalizeFirst">) return false;
+>>
+equalsI64(a) ::= <<
+	if (a<a.name; format="capitalizeFirst"> != other.a<a.name; format="capitalizeFirst">) return false;
+>>
+equalsSTRING(a) ::= <<
+	if (a<a.name; format="capitalizeFirst"> == null) {
+			if (other.a<a.name; format="capitalizeFirst"> != null) return false;
+	} else if (!a<a.name; format="capitalizeFirst">.equals(other.a<a.name; format="capitalizeFirst">)) {
+			return false;
+	}
+>>
+equalsOBJECT(a) ::= <<
+	if (a<a.name; format="capitalizeFirst"> == null) {
+			if (other.a<a.name; format="capitalizeFirst"> != null) return false;
+	} else if (!a<a.name; format="capitalizeFirst">.equals(other.a<a.name; format="capitalizeFirst">)) {
+			return false;
+	}
+>>
+
 
 writeBOOL(a) ::= <<
 		{  
@@ -259,6 +367,34 @@ declI32(t) ::= << int >>
 declI64(t) ::= << long >>
 declSTRING(t) ::= << String >>
 declOBJECT(t) ::= << <t> >>
+
+equalsMap ::= [
+        "bool":"equalsBOOL",
+        "byte":"equalsBYTE",
+        "double":"equalsDOUBLE",
+        "int16":"equalsI16",
+        "int32":"equalsI32",
+        "int64":"equalsI64",
+        "string":"equalsSTRING",
+        "map":"equalsMAP",
+        "set":"equalsSET",
+        "list":"equalsLIST",
+        default:"equalsOBJECT"
+]
+
+hashcodeMap ::= [
+        "bool":"hashcodeBOOL",
+        "byte":"hashcodeBYTE",
+        "double":"hashcodeDOUBLE",
+        "int16":"hashcodeI16",
+        "int32":"hashcodeI32",
+        "int64":"hashcodeI64",
+        "string":"hashcodeSTRING",
+        "map":"hashcodeMAP",
+        "set":"hashcodeSET",
+        "list":"hashcodeLIST",
+        default:"hashcodeOBJECT"
+]
 
 writeMap ::= [
         "bool":"writeBOOL",

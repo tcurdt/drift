@@ -22,6 +22,7 @@ import java.io.InputStreamReader;
 import org.antlr.stringtemplate.StringTemplate;
 import org.antlr.stringtemplate.StringTemplateGroup;
 import org.antlr.stringtemplate.language.AngleBracketTemplateLexer;
+import org.vafer.drift.DriftObjectBase;
 import org.vafer.drift.model.ImmutableObject;
 import org.vafer.drift.model.Schema;
 
@@ -29,9 +30,15 @@ import org.vafer.drift.model.Schema;
 public final class JavaGenerator {
 
 	private final String packageName;
+	private final String baseClass;
+
+	public JavaGenerator( final String pPackageName) {
+		this(pPackageName, DriftObjectBase.class.getName());
+	}
 	
-	public JavaGenerator( final String pPackageName ) {
+	public JavaGenerator( final String pPackageName, final String pBaseClass ) {
 		packageName = pPackageName;
+		baseClass = pBaseClass;
 	}
 	
 	/*
@@ -88,6 +95,7 @@ public final class JavaGenerator {
 			
 			final StringTemplate t = group.getInstanceOf("object");
 	        t.setAttribute("package", packageName);
+	        t.setAttribute("baseClass", baseClass);
 	        t.setAttribute("name", object.getName());
 	        t.setAttribute("parents", object.getParents());
 	        t.setAttribute("attributes", object.getAttributes());

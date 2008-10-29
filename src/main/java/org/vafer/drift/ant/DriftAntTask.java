@@ -30,6 +30,7 @@ public final class DriftAntTask extends Task {
 	private File schemaFile;
 	private File outputDir;
 	private String packageName;
+	private String baseClass;
 	
 	public File getSchemaFile() {
 		return schemaFile;
@@ -56,6 +57,14 @@ public final class DriftAntTask extends Task {
 		this.packageName = packageName;
 	}
 
+	public String getBaseClass() {
+		return baseClass;
+	}
+
+	public void setBaseClass(String baseClass) {
+		this.baseClass = baseClass;
+	}
+
 	public void execute() {
 
 		if (packageName == null) {
@@ -73,7 +82,7 @@ public final class DriftAntTask extends Task {
 		try {
 			final Schema schema = Schema.build(new FileInputStream(schemaFile));
 				
-			final JavaGenerator javaGenerator = new JavaGenerator(packageName);
+			final JavaGenerator javaGenerator = new JavaGenerator(packageName, baseClass);
 			
 			final FileCodeWriter writer = new FileCodeWriter(outputDir);
 			

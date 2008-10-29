@@ -11,6 +11,12 @@
     <name>drift</name>
     <version>1.0-SNAPSHOT</version>
     <description>
+        Drift can be used to serialize and deserialze objects in a cross
+        language manner. It will generate code based on a grammar and provide
+        hooks for data migrations across different grammar versions.        
+        In many ways very similar to Thrift (original code base) and
+        protobuffers. It's focus is serialization and data migration rather
+        than RPC and service implementation though.
     </description>
     <url>http://vafer.org/projects/drift</url>
     <developers>
@@ -33,7 +39,7 @@
     </licenses>
     <scm>
         <connection>scm:git:git://github.com:tcurdt/drift.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:tcurdt/drift.git</developerConnection>
+        <developerConnection>scm:git:git://github.com:tcurdt/drift.git</developerConnection>
         <url>http://github.com/tcurdt/drift/tree/master</url>
     </scm>
     <build>
